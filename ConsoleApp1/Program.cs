@@ -17,7 +17,7 @@ namespace ConsoleApp1
             string znak;
             Console.WriteLine("Добро пожаловать в калькулятор. Вам необходимо ввести первое\nчисло, затем знак действия(+,-,*,/, %, ^2, sqrt, 1/x, m+, m-, mr ), которое хотите совершить и второе число.");
             Console.WriteLine("Чтобы выйти напишите exit вместо знака");
-            while (true) // цикл пока пользователь не введет exit
+            while (true)
             {
                 Console.Write("Введите первое число: ");
                 if (!double.TryParse(Console.ReadLine(), out one))
@@ -34,8 +34,6 @@ namespace ConsoleApp1
                     Console.WriteLine("Выход из калькулятора.");
                     break;
                 }
-
-                // проверка корректности знака
                 if (znak != "+" && znak != "-" && znak != "*" && znak != "/" && znak != "%" &&
                     znak != "^2" && znak != "sqrt" && znak != "1/x" &&
                     znak != "m+" && znak != "m-" && znak != "mr")
@@ -43,8 +41,6 @@ namespace ConsoleApp1
                     Console.WriteLine("Неизвестный знак!\n");
                     continue;
                 }
-
-                // арифметика
                 if (znak == "+")
                 {
                     Console.Write("Введите второе число: ");
@@ -123,8 +119,6 @@ namespace ConsoleApp1
                         Console.WriteLine("Результат: " + result + "\n");
                     }
                 }
-
-                // операции памяти
                 if (znak == "m+")
                 {
                     memory += one;
